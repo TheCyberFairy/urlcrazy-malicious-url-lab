@@ -73,7 +73,7 @@ I chose to investigate `g00gle.com`, which looked suspicious due to the use of t
 
 ### 🔎 WHOIS Lookup
 
-I confirmed `g00gle.com` is actually owned by **Google LLC** and registered through **MarkMonitor**, a well-known corporate registrar.
+I confirmed `g00gle.com` is actually owned by **Google LLC** and registered through **MarkMonitor**, a well known corporate registrar.
 
 📸 ![WHOIS Output](4_g00gle_com_whois_lookup.png)
 
@@ -81,9 +81,21 @@ I confirmed `g00gle.com` is actually owned by **Google LLC** and registered thro
 
 ## 🧾 Step 4: Documentation Summary
 
-I documented the full investigation process in plain language to mimic what a SOC analyst would report in a real-world case.
+I documented the full investigation process in plain language to mimic what a SOC analyst would report in a real world case.
 
-📄 *See*: `Summary of Investigation` (included in the repo)
+- **Suspicious Domain Investigated**: g00gle.com
+- **Typo Type**: Homoglyph (uses the number “0” instead of the letter “o”)
+- **Tools Used**:
+  - urlcrazy to generate and identify lookalike domains 
+  - whois for domain ownership lookup 
+  - VirusTotal for threat reputation analysis 
+- **Findings**:
+  - Domain is registered through MarkMonitor Inc., a registrar used by Google 
+  - WHOIS confirms the Registrant Organization is Google LLC 
+  - Name servers point to ns1–ns4.googledomains.com
+  - VirusTotal scan shows 0/97 detection with standard HTML content and no malicious behavior 
+- **Conclusion**: The domain g00gle.com is benign. Despite looking suspicious at first glance, it is legitimately owned by Google. This is likely part of a defensive domain registration strategy used to prevent phishing or brand impersonation.
+
 
 ---
 
@@ -92,5 +104,5 @@ I documented the full investigation process in plain language to mimic what a SO
 - Some typo-squatted domains are actually owned by the original company
 - WHOIS + VirusTotal are a powerful combo for fast triage
 - Code patching and error handling are important skills in a SOC or lab setting
-- Documentation matters — even when the result is “not a threat”
+- Documentation matters even when the result is “not a threat”
 
